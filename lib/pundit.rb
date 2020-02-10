@@ -218,11 +218,12 @@ module Pundit
     query ||= "#{action_name}?"
      
     @_pundit_policy_authorized = true
-  if record.size > 1
+  if record.is_a?
     byebug
     policy = policy_class ? policy_class.new(pundit_user, record[1]) : policy(record[1])
   else
     policy = policy_class ? policy_class.new(pundit_user, record) : policy(record)
+    byebug
   end
   byebug
     raise NotAuthorizedError, query: query, record: record, policy: policy unless policy.public_send(query)

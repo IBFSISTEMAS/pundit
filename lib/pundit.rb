@@ -219,15 +219,15 @@ module Pundit
      
     @_pundit_policy_authorized = true
   if record.is_a?(Array)
-    byebug
+    
     policy = policy_class ? policy_class.new(pundit_user, record[1]) : policy(record[1])
   else
     policy = policy_class ? policy_class.new(pundit_user, record) : policy(record)
-    byebug
+    
   end
-  byebug
+  
     raise NotAuthorizedError, query: query, record: record, policy: policy unless policy.public_send(query)
-    byebug
+    
     record.is_a?(Array) ? record.last : record
   end
 

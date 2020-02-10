@@ -218,6 +218,7 @@ module Pundit
     query ||= "#{action_name}?"
      
     @_pundit_policy_authorized = true
+    byebug
   if record.is_a?(Array)
     
     policy = policy_class ? policy_class.new(pundit_user, record[1]) : policy(record[1])

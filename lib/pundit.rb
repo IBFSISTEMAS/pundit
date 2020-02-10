@@ -218,7 +218,6 @@ module Pundit
     query ||= "#{action_name}?"
      
     @_pundit_policy_authorized = true
-byebug
   if record.size > 1
     byebug
     policy = policy_class ? policy_class.new(pundit_user, record[1]) : policy(record[1])

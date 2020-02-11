@@ -15,6 +15,7 @@ module Pundit
     # @param object [any] the object to find policy and scope classes for
     #
     def initialize(object)
+      byebug
       if record.is_a?(Array)
         @object = object[1]
       else

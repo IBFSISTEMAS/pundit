@@ -25,6 +25,7 @@ module Pundit
     attr_reader :query, :record, :policy, :reason
 
     def initialize(options = {})
+      byebug
       if options.is_a? String
         message = options
       else

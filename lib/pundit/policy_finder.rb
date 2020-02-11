@@ -16,7 +16,7 @@ module Pundit
     #
     def initialize(object)
       byebug
-      if record.is_a?(Array)
+      if object.is_a?(Array)
         @object = object[1]
       else
       @object = object

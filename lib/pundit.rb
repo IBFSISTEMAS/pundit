@@ -24,8 +24,7 @@ module Pundit
   class NotAuthorizedError < Error
     attr_reader :query, :record, :policy, :reason
 
-    def initialize(options = {})
-      byebug
+    def initialize(options = {})      
       if options.is_a? String
         message = options
       else

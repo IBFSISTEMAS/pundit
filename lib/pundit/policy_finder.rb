@@ -15,7 +15,11 @@ module Pundit
     # @param object [any] the object to find policy and scope classes for
     #
     def initialize(object)
+      if record.is_a?(Array)
+        @object = object[1]
+      else
       @object = object
+    end
     end
 
     # @return [nil, Scope{#resolve}] scope class which can resolve to a scope

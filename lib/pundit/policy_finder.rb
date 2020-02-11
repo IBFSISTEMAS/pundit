@@ -17,7 +17,7 @@ module Pundit
     def initialize(object)
       byebug
       if object.is_a?(Array)
-        @object = object[0]
+        @object = object[1]
       else
       @object = object
     end
